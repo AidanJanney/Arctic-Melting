@@ -14,6 +14,7 @@ import geopandas as gpd
 import netCDF4
 from netCDF4 import Dataset
 from zipfile import ZipFile
+import seaborn as sns
 
 from multiprocessing import Pool as p
 
@@ -27,3 +28,14 @@ mpl.interactive(False)
 plt.ioff()                                  # turn off pyplot interactive mode 
 os.environ['HDF5_USE_FILE_LOCKING']='FALSE' # just in case
 os.environ['HDF5_MPI_OPT_TYPES']='TRUE'     # just in case
+
+# Plotting Help
+def adjust_lightness(color, amount=1.5):
+    import matplotlib.colors as mc
+    import colorsys
+    try:
+        c = mc.cnames[color]
+    except:
+        c = color
+    c = colorsys.rgb_to_hls(*mc.to_rgb(c))
+    return colorsys.hls_to_rgb(c[0], max(0, min(1, amount * c[1])), c[2])

@@ -57,7 +57,7 @@ def plot_linear_trend(ax, syear, eyear, f, c, alpha):
     return r_value
 
 
-datapath = '/Users/rantanem/Documents/python/data/arctic_warming/'
+datapath = '/Users/aidanjanney/Desktop/Climate Research - Nagle/Arctic Melting/Datasets/'
 
 
 temp_obs_arctic = pd.read_csv(datapath + '/arctic_temps_obs.csv',index_col=0)
@@ -167,7 +167,7 @@ f8_ax2.annotate('b)',(0,0.97), xycoords='axes fraction', fontsize=17,fontweight=
 f8_ax3.annotate('c)',(0,0.97), xycoords='axes fraction', fontsize=17,fontweight='bold')
 
 
-plt.savefig('/Users/rantanem/Documents/python/figures/figure1.pdf',dpi=300,bbox_inches='tight')
+plt.savefig('/Users/aidanjanney/Desktop/Climate Research - Nagle/Arctic Melting/figure1.pdf',dpi=300,bbox_inches='tight')
 
 
 ## This part of the script plots the figure used in peer-review response
